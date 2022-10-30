@@ -70,6 +70,7 @@ fn update_marker(
         return;
     }
 
+
     //window resource has changed, so lets update the position
     for mut transform in &mut query {
         transform.translation = find_bottom_right(&window);
