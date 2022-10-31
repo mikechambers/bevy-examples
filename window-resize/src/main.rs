@@ -24,8 +24,9 @@ fn main() {
         .add_startup_system(setup)
         //window resize event listener
         .add_system(on_window_resize)
-        //update position of marker
-        .add_system(update_marker)
+        //update position of marker, and make sure it runs after the window resize
+        //event is handled
+        .add_system(update_marker.after(on_window_resize))
         .run();
 }
 
